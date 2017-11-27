@@ -1,0 +1,10 @@
+---
+# tasks file for ansible-role-rsnapshot
+
+- name: Install rsnapshot on Ubuntu
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install rsnaphost on Centos
+  import_tasks: centos.yml
+  when: ansible_distribution == "CentOS"

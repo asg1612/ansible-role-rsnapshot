@@ -1,0 +1,15 @@
+---
+- name: -Centos- Download epel repo
+  yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: https://download.fedoraproject.org/pub/epel/7/x86_64/
+
+
+- name: -CENTOS- Install rsnapshot
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - rsnapshot
+    - net-tools

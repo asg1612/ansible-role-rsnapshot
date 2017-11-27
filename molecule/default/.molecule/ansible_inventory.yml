@@ -1,0 +1,14 @@
+# Molecule managed
+
+---
+all:
+  hosts:
+    instance-1: &id001
+      ansible_connection: docker
+    instance-2: &id002
+      ansible_connection: docker
+ungrouped:
+  hosts:
+    instance-1: *id001
+    instance-2: *id002
+  vars: {}
